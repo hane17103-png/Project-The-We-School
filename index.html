@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IdeaBridge | من المشكلة إلى المشروع</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="logo">
+      <span>IB</span>
+      <div>
+        <h2>IdeaBridge</h2>
+        <small>From Problems to Projects</small>
+      </div>
+    </div>
+
+    <div class="profile">
+      <div class="avatar">IB</div>
+      <div>
+        <strong>مرحباً بك</strong>
+        <small id="roleName">طالب</small>
+      </div>
+    </div>
+
+    <nav>
+      <button class="nav active" data-page="home">⌂ الرئيسية</button>
+      <button class="nav" data-page="problems">◈ بنك المشكلات</button>
+      <button class="nav" data-page="assistant">✦ المساعد الذكي</button>
+      <button class="nav" data-page="submit">＋ أضف حلاً</button>
+      <button class="nav" data-page="projects">▤ معرض المشاريع</button>
+      <button class="nav staff" data-page="review">✓ مراجعة الحلول</button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <label>نوع الحساب</label>
+      <select id="roleSelect">
+        <option value="student">طالب</option>
+        <option value="supervisor">مشرف</option>
+        <option value="admin">مدير النظام</option>
+      </select>
+      <button id="resetBtn" class="reset">إعادة ضبط البيانات</button>
+    </div>
+  </aside>
+
+  <main class="content">
+
+    <header class="topbar">
+      <div>
+        <small>مساحة الابتكار الطلابي</small>
+        <h1 id="pageTitle">مرحباً بك في IdeaBridge</h1>
+      </div>
+      <span class="online">● النظام يعمل</span>
+    </header>
+
+    <!-- الرئيسية -->
+    <section class="page active" id="home">
+
+      <div class="hero">
+        <div>
+          <span class="tag">ابدأ من مشكلة حقيقية</span>
+          <h2>كل مشروع عظيم يبدأ<br>بسؤال مهم.</h2>
+          <p>
+            اكتشف مشكلات من العالم الحقيقي، وابتكر حلولاً جديدة،
+            وحوّل أفكارك إلى مشاريع قابلة للتنفيذ.
+          </p>
+          <button class="main-btn" data-go="problems">اكتشف المشكلات ←</button>
+          <button class="outline-btn" data-go="assistant">المساعد الذكي ✦</button>
+        </div>
+        <div class="hero-icon">✦</div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span>المشكلات المتاحة</span>
+          <strong id="problemCount">0</strong>
+        </div>
+        <div class="stat">
+          <span>الحلول المقدمة</span>
+          <strong id="solutionCount">0</strong>
+        </div>
+        <div class="stat">
+          <span>المشاريع المنشورة</span>
+          <strong id="projectCount">0</strong>
+        </div>
+      </div>
+
+      <div class="section-title">
+        <h2>مشكلات مقترحة لك</h2>
+        <button class="link-btn" data-go="problems">عرض الكل ←</button>
+      </div>
+
+      <div class="cards" id="featuredProblems"></div>
+    </section>
+
+    <!-- بنك المشكلات -->
+    <section class="page" id="problems">
+      <div class="section-title">
+        <div>
+          <small>Problem Bank</small>
+          <h2>بنك المشكلات</h2>
+          <p>اختر مشكلة وابدأ في التفكير بحل مناسب.</p>
+        </div>
+      </div>
+
+      <div class="filters">
+        <input id="searchInput" placeholder="ابحث عن مشكلة...">
+        <select id="categoryFilter">
+          <option value="all">كل المجالات</option>
+          <option value="البيئة">البيئة</option>
+          <option value="الصحة">الصحة</option>
+          <option value="التعليم">التعليم</option>
+          <option value="التكنولوجيا">التكنولوجيا</option>
+          <option value="المجتمع">المجتمع</option>
+        </select>
+      </div>
+
+      <div class="cards" id="allProblems"></div>
+    </section>
+
+    <!-- المساعد الذكي -->
+    <section class="page" id="assistant">
+      <div class="assistant-layout">
+        <div class="assistant-info">
+          <small>IdeaBridge AI</small>
+          <h2>فكرتك تبدأ<br>من هنا ✦</h2>
+          <p>
+            اسأل المساعد الذكي عن أفكار الكابستون،
+            أو اطلب منه تحليل مشكلة أو إعداد خطة مشروع.
+          </p>
+          <div class="tip">
+            نصيحة: اكتب سؤالك بالتفصيل لتحصل على إجابة أفضل.
+          </div>
+        </div>
+
+        <div class="chat">
+          <div class="chat-header">
+            <div class="ai-icon">✦</div>
+            <div>
+              <strong>مساعد IdeaBridge</strong>
+              <small>جاهز لمساعدتك</small>
+            </div>
+          </div>
+
+          <div class="modes">
+            <button class="mode active" data-mode="ideas">اقتراح أفكار</button>
+            <button class="mode" data-mode="analyze">تحليل مشكلة</button>
+            <button class="mode" data-mode="solution">ابتكار حلول</button>
+            <button class="mode" data-mode="plan">خطة مشروع</button>
+          </div>
+
+          <div class="messages" id="messages">
+            <div class="message bot">
+              أهلاً بك! أنا مساعدك في IdeaBridge.
+              اكتب المجال الذي تهتم به وسأساعدك في تطوير فكرتك.
+            </div>
+          </div>
+
+          <form id="aiForm" class="chat-form">
+            <textarea id="aiInput" placeholder="اكتب سؤالك هنا..." required></textarea>
+            <button type="submit">➤</button>
+          </form>
+          <small class="note">راجع المعلومات والاقتراحات قبل اعتمادها في مشروعك.</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- إضافة حل -->
+    <section class="page" id="submit">
+      <div class="section-title">
+        <div>
+          <small>Share Your Solution</small>
+          <h2>قدّم حلك للمشكلة</h2>
+          <p>اشرح فكرتك ليتمكن المشرف من مراجعتها.</p>
+        </div>
+      </div>
+
+      <form id="solutionForm" class="form-card">
+        <label>
+          اسم المشروع
+          <input name="title" required placeholder="اكتب اسم المشروع">
+        </label>
+
+        <label>
+          المشكلة المرتبطة
+          <select name="problemId" id="solutionProblem" required></select>
+        </label>
+
+        <label>
+          وصف الحل
+          <textarea name="description" rows="5" required placeholder="اشرح كيف سيحل مشروعك المشكلة"></textarea>
+        </label>
+
+        <label>
+          التقنيات المستخدمة
+          <input name="tech" placeholder="HTML, CSS, JavaScript">
+        </label>
+
+        <label>
+          مستوى الصعوبة
+          <select name="difficulty">
+            <option>سهل</option>
+            <option>متوسط</option>
+            <option>متقدم</option>
+          </select>
+        </label>
+
+        <button class="main-btn" type="submit">إرسال الحل للمراجعة ←</button>
+      </form>
+    </section>
+
+    <!-- معرض المشاريع -->
+    <section class="page" id="projects">
+      <div class="section-title">
+        <div>
+          <small>Community Projects</small>
+          <h2>معرض المشاريع</h2>
+          <p>المشروعات التي تمت الموافقة عليها.</p>
+        </div>
+      </div>
+      <div class="project-list" id="projectList"></div>
+    </section>
+
+    <!-- مراجعة الحلول -->
+    <section class="page" id="review">
+      <div class="section-title">
+        <div>
+          <small>Supervisor Workspace</small>
+          <h2>مراجعة الحلول</h2>
+          <p>راجع الحلول المقدمة ووافق عليها أو ارفضها.</p>
+        </div>
+      </div>
+      <div class="project-list" id="reviewList"></div>
+    </section>
+
+    <footer>
+      IdeaBridge © 2026 — نحوّل المشكلات إلى فرص للابتكار.
+    </footer>
+
+  </main>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
